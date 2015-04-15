@@ -46,25 +46,29 @@ var routeUtils = {
 };
 
 Template.registerHelper('isActiveRoute', function(routes, className) {
-    className = (className.hash) ? 'active' : className;
-
-    return routeUtils.testRoutes(routes) ? className : '';
+    if(this.context){
+        className = (className.hash) ? 'active' : className;
+        return routeUtils.testRoutes(routes) ? className : '';
+    }
 });
 
 Template.registerHelper('isActivePath', function(paths, className) {
-    className = (className.hash) ? 'active' : className;
-
-    return routeUtils.testPaths(paths) ? className : '';
+    if(this.context){
+        className = (className.hash) ? 'active' : className;
+        return routeUtils.testPaths(paths) ? className : '';
+    }
 });
 
 Template.registerHelper('isNotActiveRoute', function(routes, className) {
-    className = (className.hash) ? 'disabled' : className;
-
-    return ! routeUtils.testRoutes(routes) ? className : '';
+    if(this.context){
+        className = (className.hash) ? 'disabled' : className;
+        return ! routeUtils.testRoutes(routes) ? className : '';
+    }
 });
 
 Template.registerHelper('isNotActivePath', function(paths, className) {
-    className = (className.hash) ? 'disabled' : className;
-
-    return ! routeUtils.testPaths(paths) ? className : '';
+    if(this.context){
+        className = (className.hash) ? 'disabled' : className;
+        return ! routeUtils.testPaths(paths) ? className : '';
+    }
 });
