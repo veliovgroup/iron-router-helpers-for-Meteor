@@ -46,28 +46,28 @@ var routeUtils = {
 };
 
 Template.registerHelper('isActiveRoute', function(routes, className) {
-    if(this.context){
+    if(routeUtils.context()){
         className = (className.hash) ? 'active' : className;
         return routeUtils.testRoutes(routes) ? className : '';
     }
 });
 
 Template.registerHelper('isActivePath', function(paths, className) {
-    if(this.context){
+    if(routeUtils.context()){
         className = (className.hash) ? 'active' : className;
         return routeUtils.testPaths(paths) ? className : '';
     }
 });
 
 Template.registerHelper('isNotActiveRoute', function(routes, className) {
-    if(this.context){
+    if(routeUtils.context()){
         className = (className.hash) ? 'disabled' : className;
         return ! routeUtils.testRoutes(routes) ? className : '';
     }
 });
 
 Template.registerHelper('isNotActivePath', function(paths, className) {
-    if(this.context){
+    if(routeUtils.context()){
         className = (className.hash) ? 'disabled' : className;
         return ! routeUtils.testPaths(paths) ? className : '';
     }
