@@ -35,13 +35,21 @@ var routeUtils = {
     },
 
     testRoutes: function(routeNames) {
-        var reg = this.regex(routeNames);
-        return this.context() && reg.test(this.context().route.getName());
+        if(routeNames && this.context().route){
+            var reg = this.regex(routeNames);
+            return this.context() && reg.test(this.context().route.getName());
+        }else{
+            return null
+        }
     },
 
     testPaths: function(paths) {
-        var reg = this.regex(paths);
-        return this.context() && reg.test(this.context().route._path);
+        if(paths && this.context().route){
+            var reg = this.regex(paths);
+            return this.context() && reg.test(this.context().route._path);
+        }else{
+            return null
+        }
     }
 };
 
