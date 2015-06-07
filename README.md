@@ -1,19 +1,16 @@
-iron-router-helpers
-==================
+# Deprecated!
 
-__!!!NOTE: This package was merged with [zimme:active-route](https://github.com/zimme/meteor-active-route)!!!__
+This package is being deprecated in favor of [`zimme:active-route`].
 
-Quick Template helper to determine if the current route is active, for nav links. Please use with `meteorhacks:flow-router` and `iron:router`.
+# Install
 
- - Merged to [zimme:active-route](https://github.com/zimme/meteor-active-route) *06/07/2015*
- - Initially was forked and updated from: [iron-router-active](https://github.com/XpressiveCode/iron-router-active)
+```sh
+meteor add zimme:active-route
+```
 
-Installation
-============
+# Future
 
-`meteor add zimme:active-route`
+This package might return in the future, with other useful [`iron:router`] helpers.
 
-Usage
-=====
-
-Please see docs for [zimme:active-route](https://github.com/zimme/meteor-active-route)
+[`iron:router`]: https://atmospherejs.com/iron/router
+[`zimme:active-route`]: https://atmospherejs.com/zimme/acitve-route
