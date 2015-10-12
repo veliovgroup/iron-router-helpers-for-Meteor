@@ -36,10 +36,18 @@ var routeUtils = {
 
     testRoutes: function(routeNames) {
         if(routeNames && this.context().route){
-            var reg = this.regex(routeNames);
-            return this.context() && reg.test(this.context().route.getName());
+            currentRoute = this.context().route.getName();
+            if(routeNames.indexOf('|')){
+                routeNames = routeNames.split('|');
+            }else{
+                routeNames = [routeNames];
+            }
+            res = routeNames.filter(function(route){
+                return route === currentRoute;
+            });
+            return res.length > 0;
         }else{
-            return null
+            return null;
         }
     },
 
@@ -48,7 +56,7 @@ var routeUtils = {
             var reg = this.regex(paths);
             return this.context() && reg.test(this.context().route._path);
         }else{
-            return null
+            return null;
         }
     }
 };
@@ -70,13 +78,13 @@ Template.registerHelper('isActivePath', function(paths, className) {
 Template.registerHelper('isNotActiveRoute', function(routes, className) {
     if(routeUtils.context()){
         className = (className.hash) ? 'disabled' : className;
-        return ! routeUtils.testRoutes(routes) ? className : '';
+        return !routeUtils.testRoutes(routes) ? className : '';
     }
 });
 
 Template.registerHelper('isNotActivePath', function(paths, className) {
     if(routeUtils.context()){
         className = (className.hash) ? 'disabled' : className;
-        return ! routeUtils.testPaths(paths) ? className : '';
+        return !routeUtils.testPaths(paths) ? className : '';
     }
 });

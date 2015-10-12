@@ -1,6 +1,6 @@
 Package.describe({
   name: 'ostrio:iron-router-helpers',
-  version: '0.3.9',
+  version: '0.4.0',
   summary: 'An iron-router helpers for quickly adding classnames to your active navigation elements.',
   git: 'https://github.com/VeliovGroup/iron-router-helpers-for-Meteor',
   documentation: 'README.md'
